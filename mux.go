@@ -34,6 +34,10 @@ func (r *Router) Handle(resource string, handler Handler) *Route {
 	return r.NewRoute().Resource(resource).Handler(handler)
 }
 
+func (r *Router) HandleFunc(resource string, handlerF HandlerFunc) *Route {
+	return r.NewRoute().Resource(resource).Handler(handlerF)
+}
+
 func (r *Router) Methods(methods ...string) *Route {
 	return r.NewRoute().Methods(methods...)
 }
